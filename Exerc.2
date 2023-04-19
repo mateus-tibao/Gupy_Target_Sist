@@ -1,0 +1,24 @@
+def sequencia_fibonacci(n):
+    # Retorna a sequência de Fibonacci até o n-ésimo termo
+    sequencia = [0, 1]
+    while sequencia[-1] < n:
+        sequencia.append(sequencia[-1] + sequencia[-2])
+    return sequencia
+
+def pertence_a_fibonacci(numero):
+    # Verifica se o número está presente na sequência de Fibonacci
+    sequencia = sequencia_fibonacci(numero)
+    if sequencia[-1] == numero:
+        return True
+    else:
+        return False
+
+# Solicita ao usuário para informar um número
+numero = int(input("Digite um número para verificação: "))
+
+# Verifica se o número está na sequência de Fibonacci e exibe a mensagem correspondente
+sequencia = sequencia_fibonacci(numero)
+if pertence_a_fibonacci(numero):
+    print(f'O número {numero} pertence à sequência de Fibonacci.')
+else:
+    print(f'O número {numero} não pertence à sequência de Fibonacci.')
